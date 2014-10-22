@@ -24,7 +24,9 @@ First, install the packages below.
 
 * The `maps` and `mapdata` packages make plotting maps really nice and simple. 
 * The `devtools` package is a necessity for advanced R analysis. It has a really nice interface for installing packages from GitHub, among other repositories. 
+* __If you are using Windows__, you will have to download the `rtools` package directly from [cran.r-project.org/bin/windows/Rtools/](http://cran.r-project.org/bin/windows/Rtools/). Select the most recent version and run it when it is downloaded. Then the `devtools` package will load correctly. 
 * Then the `rWBclimate` from GitHub. This requires the `devtools` packages be installed, so do that first. 
+
 
 Notice that each `install.packages` command is commented out so that Rstudio doesn't install them all each time the script is run. It is best to run each of those commands manually in the console, then they will be on your system each time you load them with the `library` command. 
 
@@ -51,14 +53,9 @@ country.temp <- get_historical_temp(country.list, 'year')
 
 
 ```{r cacheData, echo=FALSE}
-write.table(country.precip, file='data/precip.txt', sep='\t', quote=FALSE, row.names=FALSE)
 # country.precip <- read.delim('precip.txt', sep='\t', head=TRUE)
-write.table(country.temp, file='data/temp.txt', sep='\t', quote=FALSE, row.names=FALSE)
 # country.temp <- read.delim('temp.txt', sep='\t', head=TRUE)
 ```
-
-
-system('head precip.txt')
 
 
 
